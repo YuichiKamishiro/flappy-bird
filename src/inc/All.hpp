@@ -1,0 +1,12 @@
+#pragma once
+#include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
+#include <box2d/box2d.h>
+#include <string>
+#include <ctime>
+#include <vector>
+#include <iostream>
+#include <sstream>
+#include <fstream>
+#include <thread>
+#include "Constants.hpp"
