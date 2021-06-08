@@ -34,10 +34,10 @@ void Bird::init(b2World *world, float density, float friction, float rest, float
 }
 
 void Bird::checkButton(sf::Event &event){
-	if(!pr && event.type == sf::Event::KeyPressed)
+	if(!pr && event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space)
 		pr = true;
-	
-	if(pr && event.type == sf::Event::KeyReleased)
+
+	if (pr && event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Space)
 		bJump = true;
 }
 
