@@ -44,7 +44,7 @@ void Bird::checkButton(sf::Event &event){
 void Bird::jump(){
 	if(bJump){
 		body->SetLinearVelocity(b2Vec2(0, 0));
-		body->ApplyLinearImpulse(b2Vec2(0, -1.5200), body->GetWorldCenter(), 1);
+		body->ApplyLinearImpulse(b2Vec2(0, -1.4500), body->GetWorldCenter(), 1);
 		bJump = false;
 	}	
 }
