@@ -1,8 +1,6 @@
 #include "inc/Bird.hpp"
 #include <SFML/Graphics/Rect.hpp>
 
-// bird description
-
 int birdData = 1;
 
 Bird::Bird(){

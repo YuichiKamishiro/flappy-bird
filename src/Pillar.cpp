@@ -2,8 +2,6 @@
 
 int pillarData = 3;
 
-// pillar description
-
 Pillar::Pillar(sf::Texture &texture){
     firstSprite.setTexture(texture);
     secondSprite.setTexture(texture);
@@ -33,7 +31,7 @@ void Pillar::init(b2World *world){
     secondBody->GetUserData().pointer = reinterpret_cast<uintptr_t>(&pillarData);
 }
 
-// pillarsspawner description
+ 
 
 void PillarsSpawner::follow(){
     for (int i = 0; i < VectorOfPillars.size(); ++i){

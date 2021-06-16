@@ -1,7 +1,5 @@
 #include "inc/Listener.hpp"
 
-// listener description
-
 void Listener::BeginContact(b2Contact *contact){
 }
 void Listener::EndContact(b2Contact *contact){

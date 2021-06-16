@@ -1,51 +1,53 @@
 #include "inc/App.hpp"
 #include <iostream>
-bool bStart = true; // start state
-bool bRestart = false; // restart state
+
+bool bStart = true; 
+bool bRestart = false; 
 int lastTime = 0;
+
 void App::run(){
-	srand(std::time(0)); //random seed
+	srand(std::time(0)); 
 	
-	b2Vec2 gravity(0,+1); // gravity
+	b2Vec2 gravity(0,+1); 
 	b2World world(gravity);
 
-	bird.init(&world, 0.1f, 0.f, 0.1f, 25.5f, 13.8f); //initialization 
+	bird.init(&world, 0.1f, 0.f, 0.1f, 25.5f, 13.8f);   
 	ground.init(&world);
-	world.SetContactListener(&listener); //choose contact listener
+	world.SetContactListener(&listener);  
 	window.setFramerateLimit(130);
 	while(window.isOpen()){
-		processEvent(); // processing events
+		processEvent();  
 
-		delta = clock.getElapsedTime().asSeconds(); //delta
+		delta = clock.getElapsedTime().asSeconds();  
 		clock.restart();
                         
-		if(bRestart){ // check if Restart == true
+		if(bRestart){  
 			restart();
 		}
 
-		//functions
+	 
 		bird.functions();
 		ground.checkPos();
 		counter.check(pillarsSpawner,bird);
 		counter.update();
 		pillarsSpawner.destroy(&world);
 
-		if(bStart == false){ // check game state
+		if(bStart == false){ 
 			pillarsSpawner.spawn(delta, world,texture);
 			pillarsSpawner.follow();
 		}
 
-		for (time += delta; time >= timeStep; time -= timeStep){ // world step
+		for (time += delta; time >= timeStep; time -= timeStep){ 
 			world.Step(timeStep, 6, 2);
 		}
 
-		window.clear(); // clear,render,display
+		window.clear();  
 		render();
 		display();
     }
 }
 
-// function description
+
 
 App::App() : window(sf::VideoMode(420,600), "flappy-bird-demo"){
 	

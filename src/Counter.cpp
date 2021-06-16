@@ -1,5 +1,6 @@
 #include "inc/Counter.hpp"
 #include <iostream>
+
 Counter::Counter(){
     insideFont.loadFromFile("res/inside.ttf");
     outsideFont.loadFromFile("res/outside.ttf");
